@@ -41,8 +41,8 @@ public class FileLzwArchiver {
         compress("ggggC.bmp","gggg.bmp");
         decompress("ggggD.bmp","ggggC.bmp");
 
-        compress("fraerC.bmp","fraer.bmp");
-        decompress("fraerD.bmp","fraerC.bmp");
+        compress("rawC.bmp","raw.bmp");
+        decompress("rawD.bmp","rawC.bmp");
 
         compress("soundC.wav","sound.wav");
         decompress("soundD.wav","soundC.wav");
