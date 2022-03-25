@@ -1,14 +1,8 @@
 package com.kitSoft;
 
-import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class Coder {
+public class HaffmanCoder {
     private String input;
     private byte[] buffer;
     private HaffmanImplementation.Node tree;
@@ -18,7 +12,7 @@ public class Coder {
 
 
 
-    public Coder(String input) throws IOException {
+    public HaffmanCoder(String input) throws IOException {
         this.input = input;
         HaffmanImplementation haffmanImplementation = new HaffmanImplementation(input);
         tree = haffmanImplementation.getEncodingTree();
@@ -42,10 +36,10 @@ public class Coder {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Coder coder = new Coder("BLalablabla HAHAHAHA aHAH AHA Aasfgasfhjka sdfgjhaddasdhj a asda");
+        HaffmanCoder coder = new HaffmanCoder("BLalablabla HAHAHAHA aHAH AHA Aasfgasfhjka sdfgjhaddasdhj a asda");
         coder.writeToFile("string.bin","stringTree.bin");
 
-        Decoder decoder = new Decoder();
+        HaffmanDecoder decoder = new HaffmanDecoder();
         System.out.println(decoder.decode("string.bin","stringTree.bin"));
     }
 }

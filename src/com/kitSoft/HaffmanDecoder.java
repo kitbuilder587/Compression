@@ -4,8 +4,8 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.util.BitSet;
 
-public class Decoder {
-    public Decoder(){
+public class HaffmanDecoder {
+    public HaffmanDecoder(){
 
     }
 
