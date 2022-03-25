@@ -8,7 +8,8 @@ public class FileLzwArchiver {
         byte[] buffer = inputStream.readAllBytes();
         inputStream.close();
         BitArray fileData = new BitArray(buffer);
-        BitArray codedFile = LzwImplementation.code(fileData);
+        LzwImplementation lzwImplementation = new LzwImplementation(new DynamicSizeArrayBinaries());
+        BitArray codedFile = lzwImplementation.code(fileData);
 
         OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(pathToCompress));
         outputStream.write(codedFile.byteCoder());
@@ -21,7 +22,8 @@ public class FileLzwArchiver {
         byte[] buffer = inputStream.readAllBytes();
         inputStream.close();
         BitArray fileData = BitArray.deserealize(buffer);
-        BitArray decodedFile = LzwImplementation.decode(fileData);
+        LzwImplementation lzwImplementation = new LzwImplementation(new DynamicSizeArrayBinaries());
+        BitArray decodedFile = lzwImplementation.decode(fileData);
 
         OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(pathToDecompress));
         outputStream.write(decodedFile.getPureBytes());

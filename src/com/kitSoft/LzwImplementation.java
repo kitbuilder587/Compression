@@ -1,11 +1,17 @@
 package com.kitSoft;
 
-import java.math.BigInteger;
 import java.util.*;
 
 public class LzwImplementation {
 
-    public static BitArray code(BitArray array){
+
+    private ArrayBinaries arrayBinaries;
+
+    public LzwImplementation(ArrayBinaries arrayBinaries){
+        this.arrayBinaries = arrayBinaries;
+    }
+
+    public BitArray code(BitArray array){
         System.out.println("ARRAY SIZE: " + array.data.size());
         Map<String,Integer> table = new HashMap<>();
         table.put("0",1);
@@ -32,11 +38,11 @@ public class LzwImplementation {
         }
         resIntegers.add(table.get(cur.toString()));
 
-        return ArrayBinaries.getBinary(resIntegers);
+        return arrayBinaries.getBinary(resIntegers);
     }
 
-    public static BitArray decode(BitArray input){
-        ArrayList<Integer> array = ArrayBinaries.getArray(input);
+    public BitArray decode(BitArray input){
+        ArrayList<Integer> array = arrayBinaries.getArray(input);
         System.out.println("ARRAY SIZE: " + array.size());
         Map<Integer,String> table = new HashMap<>();
         Set<String> emittedPhrases = new HashSet<>();
@@ -75,8 +81,9 @@ public class LzwImplementation {
     }
 
     public static void main(String[] args) {
-        BitArray array = code(new BitArray("00000011000000010110001000000000000000000000000000000000000000000000000000"));
+        LzwImplementation lzwImplementation = new LzwImplementation(new StringStyleArrayBinaries());
+        BitArray array = lzwImplementation.code(new BitArray("00000011000000010110001000000000000000000000000000000000000000000000000000"));
         System.out.println(array.toString());
-        System.out.println(decode(array));
+        System.out.println(lzwImplementation.decode(array));
     }
 }
