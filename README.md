@@ -11,5 +11,5 @@
 
 <h3> Array Binaries update </h3>
 
-Added interface <a href="https://github.com/kitbuilder587/Compression/blob/master/src/com/kitSoft/ArrayBinaries.java">ArrayBinaries</a> that is implemented by classes that could pack an integer array. This one of the steps of Lzw algorithm. One of this classes is <a href="https://github.com/kitbuilder587/Compression/blob/master/src/com/kitSoft/DynamicSizeArrayBinaries.java">DynamicSizeArrayBinaries</a> that can operate with coding integers to binary codes with different sizes. It based on idea that element i of array couldn't be greater than i+2. By that optimization simple text on wikipedia could be compressed to the half of his size.
+Added interface <a href="https://github.com/kitbuilder587/Compression/blob/master/src/com/kitSoft/ArrayBinaries.java">ArrayBinaries</a> that is implemented by classes that could pack an integer array. This one of the steps of Lzw algorithm. One of this classes is <a href="https://github.com/kitbuilder587/Compression/blob/master/src/com/kitSoft/DynamicSizeArrayBinaries.java">DynamicSizeArrayBinaries</a> that can operate with coding integers to binary codes with different sizes. It based on idea that element i of array couldn't be greater than i+2. By that optimization simple text on wikipedia could be compressed to the half of its size.
 
